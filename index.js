@@ -29,19 +29,19 @@ var x = canvas.width/2;
 var y = canvas.height - 30;
 var dx = 2;
 var dy = -2;
-var ballRadius =10;
-var paddleHeight = 10;
-var paddleWidth = 75;
+var ballRadius =5;
+var paddleHeight = 7;
+var paddleWidth = 50;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
-var brickRowCount = 3;
-var brickColumnCount = 5;
-var brickWidth = 75;
-var brickHeight = 20;
-var brickPadding = 10;
+var brickRowCount = 6;
+var brickColumnCount = 15;
+var brickWidth = 35;
+var brickHeight = 10;
+var brickPadding = 5;
 var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
+var brickOffsetLeft = 0;
 var score = 0;
 var lives =3;
 
@@ -159,13 +159,15 @@ function draw(){
     }
     else{
         lives--;
+        paddleWidth = paddleWidth-15;
+        console.log(paddleWidth);
     if(!lives){
       alert("GAME OVER");
       document.location.reload();
       }
       else{
         x = canvas.width/2;
-        y= canvas.height-30;
+        y = canvas.height-30;
         dx = 2;
         dy = -2;
         paddleX =(canvas.width-paddleWidth)/2;
